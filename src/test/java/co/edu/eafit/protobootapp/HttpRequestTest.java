@@ -22,8 +22,8 @@ public class HttpRequestTest {
 
     @Test
     public void testSaludoPorDefecto() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/hola",
-                String.class)).contains("Hola Mundo!");
+        String forObject = this.restTemplate.getForObject("http://localhost:" + port + "/hola", String.class);
+        assertThat(forObject).isEqualTo("Hola Mundo!");
     }
     
     @Test
